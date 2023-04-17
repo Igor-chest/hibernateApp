@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.41">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>2020</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2037</IntrospectionStateNumber>
       <ServerVersion>15.2</ServerVersion>
       <StartupTime>1681381334</StartupTime>
       <TimeZones>true ACDT
@@ -805,8 +805,11 @@ false Zulu
 13183||10|C|G
 13183||-9223372036854775808|U|G
 13183||10|U|G</Grants>
-      <IntrospectionStateNumber>2020</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2037</IntrospectionStateNumber>
       <ObjectId>16661</ObjectId>
+      <Relations>sequence|table|16675|16676|1
+sequence|table|16682|16683|1
+</Relations>
       <OwnerName>postgres</OwnerName>
     </database>
     <database id="4" parent="1" name="library_db">
@@ -4223,51 +4226,126 @@ false Zulu
     <schema id="264" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>2020</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2037</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
-    <table id="265" parent="264" name="person">
-      <ObjectId>16662</ObjectId>
-      <StateNumber>2019</StateNumber>
+    <sequence id="265" parent="264" name="item_id_seq">
+      <DataType>integer|0s</DataType>
+      <ObjectId>16682</ObjectId>
+      <StateNumber>2036</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="266" parent="264" name="person_id_seq">
+      <DataType>integer|0s</DataType>
+      <ObjectId>16675</ObjectId>
+      <StateNumber>2034</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <table id="267" parent="264" name="item">
+      <ObjectId>16683</ObjectId>
+      <StateNumber>2036</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <column id="266" parent="265" name="id">
+    <table id="268" parent="264" name="person">
+      <ObjectId>16676</ObjectId>
+      <StateNumber>2036</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <column id="269" parent="267" name="id">
       <DataType>integer|0s</DataType>
+      <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2019</StateNumber>
+      <StateNumber>2036</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="267" parent="265" name="name">
-      <DataType>varchar(100)|0s</DataType>
+    <column id="270" parent="267" name="person_id">
+      <DataType>integer|0s</DataType>
       <Position>2</Position>
-      <StateNumber>2019</StateNumber>
+      <StateNumber>2036</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="271" parent="267" name="item_name">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>2036</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="268" parent="265" name="age">
-      <DataType>integer|0s</DataType>
-      <Position>3</Position>
-      <StateNumber>2019</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <index id="269" parent="265" name="person_pkey">
+    <foreign-key id="272" parent="267" name="item_person_id_fkey">
+      <ColNames>person_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16688</ObjectId>
+      <OnDelete>set-null</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>2036</StateNumber>
+      <RefTableId>16676</RefTableId>
+      <RefTableName>person</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="273" parent="267" name="item_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16665</ObjectId>
+      <ObjectId>16686</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2019</StateNumber>
+      <StateNumber>2036</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="270" parent="265" name="person_pkey">
+    <key id="274" parent="267" name="item_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16666</ObjectId>
+      <ObjectId>16687</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2019</StateNumber>
-      <UnderlyingIndexId>16665</UnderlyingIndexId>
+      <StateNumber>2036</StateNumber>
+      <UnderlyingIndexId>16686</UnderlyingIndexId>
+    </key>
+    <check id="275" parent="268" name="person_age_check">
+      <ColNames>age</ColNames>
+      <ObjectId>16679</ObjectId>
+      <Predicate>age &lt; 100</Predicate>
+      <StateNumber>2034</StateNumber>
+    </check>
+    <column id="276" parent="268" name="id">
+      <DataType>integer|0s</DataType>
+      <IdentityKind>by-default</IdentityKind>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>2034</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="277" parent="268" name="name">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>2034</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="278" parent="268" name="age">
+      <DataType>integer|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>2034</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="279" parent="268" name="person_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16680</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>2034</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="280" parent="268" name="person_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16681</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>2034</StateNumber>
+      <UnderlyingIndexId>16680</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

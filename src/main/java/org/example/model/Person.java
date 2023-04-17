@@ -1,17 +1,15 @@
 package org.example.model;
 
+import javax.persistence.*;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity // помечет класс, связанный с БД
+@Entity
 @Table(name = "Person")
 public class Person {
 
     @Id
-    @Column(name = "id") // связывает свойство с колонкой
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "name")
@@ -20,20 +18,23 @@ public class Person {
     @Column(name = "age")
     private int age;
 
-    public Person() {}
+    @OneToMany(mappedBy = "owner")
+    private List<Item> items;
 
-    public Person(int id, String name, int age) {
-        this.id = id;
+    public Person() {
+    }
+
+    public Person(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public int getId() {
-        return id;
+    public List<Item> getItems() {
+        return items;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     public String getName() {
@@ -50,5 +51,21 @@ public class Person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
