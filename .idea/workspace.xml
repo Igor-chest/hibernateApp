@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17eb20cf-6953-464b-96ee-99f2d5b7a8de" name="Changes" comment="cascade">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Passport.java" afterDir="false" />
+    <list default="true" id="17eb20cf-6953-464b-96ee-99f2d5b7a8de" name="Changes" comment="one to one">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Actor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Movie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/e762fa49-b8f8-431e-8755-dd93d580233e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e762fa49-b8f8-431e-8755-dd93d580233e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/e762fa49-b8f8-431e-8755-dd93d580233e/storage_v2/_src_/database/hibernate_demo_db.bVH-1A/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e762fa49-b8f8-431e-8755-dd93d580233e/storage_v2/_src_/database/hibernate_demo_db.bVH-1A/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Passport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Person.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +115,7 @@
       <workItem from="1681719223700" duration="8843000" />
       <workItem from="1681799298177" duration="2460000" />
       <workItem from="1681906880021" duration="1133000" />
-      <workItem from="1682319860815" duration="6701000" />
+      <workItem from="1682319860815" duration="9153000" />
     </task>
     <task id="LOCAL-00001" summary="create">
       <created>1681402151052</created>
@@ -158,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682325352463</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="one to one">
+      <created>1682327716666</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682327716666</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +188,7 @@
     <MESSAGE value="create db and person model class" />
     <MESSAGE value="one to many in hibernate" />
     <MESSAGE value="cascade" />
-    <option name="LAST_COMMIT_MESSAGE" value="cascade" />
+    <MESSAGE value="one to one" />
+    <option name="LAST_COMMIT_MESSAGE" value="one to one" />
   </component>
 </project>
