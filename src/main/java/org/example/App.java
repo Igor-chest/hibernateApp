@@ -23,14 +23,16 @@ public class App {
         try {
             session.beginTransaction();
 
-            Person person = session.get(Person.class, 4);
+            Person person = new Person("Anatol", 30);
+            Item item1 = new Item("item 1");
+            Item item2 = new Item("item 2");
+            Item item3 = new Item("item 3");
 
-            Item item = session.get(Item.class, 1);
-            item.getOwner().getItems().remove(item);
+            person.addItem(item1);
+            person.addItem(item2);
+            person.addItem(item3);
 
-            item.setOwner(person);
-            person.getItems().add(item);
-
+            session.save(person);
 
             session.getTransaction().commit(); // закрываем транзакцию
 
