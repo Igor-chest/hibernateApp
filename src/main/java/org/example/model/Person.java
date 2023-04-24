@@ -21,9 +21,9 @@ public class Person {
     @Column(name = "age")
     private int age;
 
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.PERSIST)
-    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE) // с помощью этого cascade при записи person в бд (save) item также запишется
-    private List<Item> items;
+    @OneToOne(mappedBy = "person")
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    private Passport passport;
 
     public Person() {
     }
@@ -33,13 +33,7 @@ public class Person {
         this.age = age;
     }
 
-    public List<Item> getItems() {
-        return items;
-    }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
 
     public String getName() {
         return name;
@@ -65,13 +59,13 @@ public class Person {
         return id;
     }
 
-    public void addItem(Item item) {
-        if (this.items == null) {
-            this.items = new ArrayList<>();
-        }
+    public Passport getPassport() {
+        return passport;
+    }
 
-        this.items.add(item);
-        item.setOwner(this);
+    public void setPassport(Passport passport) {
+        this.passport = passport;
+        passport.setPerson(this);
     }
 
     @Override
