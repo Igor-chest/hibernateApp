@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17eb20cf-6953-464b-96ee-99f2d5b7a8de" name="Changes" comment="one to one">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Actor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Movie.java" afterDir="false" />
+    <list default="true" id="17eb20cf-6953-464b-96ee-99f2d5b7a8de" name="Changes" comment="many to many">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/e762fa49-b8f8-431e-8755-dd93d580233e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e762fa49-b8f8-431e-8755-dd93d580233e.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e762fa49-b8f8-431e-8755-dd93d580233e/storage_v2/_src_/database/hibernate_demo_db.bVH-1A/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e762fa49-b8f8-431e-8755-dd93d580233e/storage_v2/_src_/database/hibernate_demo_db.bVH-1A/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Passport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Actor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Actor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Movie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +57,14 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/shest/OneDrive/Рабочий стол/Программирование/EmployeeTest&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/shest/IdeaProjects/HibernateApp&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -73,8 +74,11 @@
 }</component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-15" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
       <module name="HibernateApp" />
+      <option name="PROGRAM_PARAMETERS" value="$MAVEN_REPOSITORY$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
@@ -115,7 +119,17 @@
       <workItem from="1681719223700" duration="8843000" />
       <workItem from="1681799298177" duration="2460000" />
       <workItem from="1681906880021" duration="1133000" />
-      <workItem from="1682319860815" duration="9153000" />
+      <workItem from="1682319860815" duration="10028000" />
+      <workItem from="1683287464321" duration="47000" />
+      <workItem from="1683404994603" duration="43000" />
+      <workItem from="1683721877303" duration="8000" />
+      <workItem from="1683721896353" duration="22000" />
+      <workItem from="1686292895029" duration="250000" />
+      <workItem from="1686293534445" duration="932000" />
+      <workItem from="1686295122948" duration="1207000" />
+      <workItem from="1686296549407" duration="732000" />
+      <workItem from="1686297293992" duration="355000" />
+      <workItem from="1686297660573" duration="537000" />
     </task>
     <task id="LOCAL-00001" summary="create">
       <created>1681402151052</created>
@@ -166,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682327716666</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="many to many">
+      <created>1682330199222</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682330199222</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +210,7 @@
     <MESSAGE value="one to many in hibernate" />
     <MESSAGE value="cascade" />
     <MESSAGE value="one to one" />
-    <option name="LAST_COMMIT_MESSAGE" value="one to one" />
+    <MESSAGE value="many to many" />
+    <option name="LAST_COMMIT_MESSAGE" value="many to many" />
   </component>
 </project>

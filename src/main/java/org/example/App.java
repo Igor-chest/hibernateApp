@@ -25,13 +25,14 @@ public class App {
             Session session = sessionFactory.getCurrentSession();
             session.beginTransaction();
 
-            Actor actor = session.get(Actor.class, 2);
+            Actor actor = session.get(Actor.class, 1);
             System.out.println(actor.getMovies());
 
             Movie movie = actor.getMovies().get(0);
+            System.out.println(movie);
 
-            actor.getMovies().remove(0);
-            movie.getActors().remove(actor);
+            //actor.getMovies().remove(0);
+            //movie.getActors().remove(actor);
 
             session.getTransaction().commit(); // закрываем транзакцию
 
